@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:id="@+id/itemMenuLight"
+        android:title="@string/light"
+        android:icon="@drawable/ic_launcher_foreground"
+        >
+    </item>
+
+    <item
+        android:id="@+id/itemMenuSound"
+        android:title="@string/sound"
+        android:icon="@drawable/ic_launcher_background">
+    </item>
+
+</menu>

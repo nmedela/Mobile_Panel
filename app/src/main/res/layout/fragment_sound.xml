@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lblTrebleStatus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SoundFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="145dp" />
+
+        <Switch
+            android:id="@+id/swPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch"
+            app:layout_constraintBottom_toTopOf="@+id/ckMode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ibVolumeUp"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_volume_up_24"
+            app:layout_constraintBottom_toBottomOf="@+id/sbVolume"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sbVolume"
+            app:layout_constraintTop_toTopOf="@+id/sbVolume" />
+
+        <ImageButton
+            android:id="@+id/ibVolumeOff"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_volume_off_24"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toEndOf="@+id/ibVolumeDown"
+            app:layout_constraintStart_toStartOf="@+id/ibVolumeDown"
+            app:layout_constraintTop_toBottomOf="@+id/ibVolumeDown" />
+
+        <ImageButton
+            android:id="@+id/ibVolumeDown"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_volume_down_24"
+            app:layout_constraintBottom_toBottomOf="@+id/sbVolume"
+            app:layout_constraintEnd_toStartOf="@+id/sbVolume"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sbVolume" />
+
+        <SeekBar
+            android:id="@+id/sbVolume"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+        <SeekBar
+            android:id="@+id/sbBass"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/lblBassStatus"
+            app:layout_constraintEnd_toEndOf="@+id/lblBass"
+            app:layout_constraintStart_toStartOf="@+id/lblBass"
+            app:layout_constraintTop_toBottomOf="@+id/lblBass"
+            android:rotation="270"/>
+
+        <SeekBar
+            android:id="@+id/sbTreble"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="@+id/lblTreble"
+            app:layout_constraintStart_toStartOf="@+id/lblTreble"
+            app:layout_constraintTop_toBottomOf="@+id/lblTreble"
+            android:rotation="270"
+            />
+
+        <CheckBox
+            android:id="@+id/ckMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toEndOf="@+id/swPower"
+            app:layout_constraintStart_toStartOf="@+id/swPower" />
+
+        <RadioGroup
+            android:id="@+id/rbgInput"
+            android:layout_width="178dp"
+            android:layout_height="77dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/spZone"
+            app:layout_constraintTop_toTopOf="@+id/guideline7">
+
+            <RadioButton
+                android:id="@+id/rbInput0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+
+            <RadioButton
+                android:id="@+id/rbInput1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spZone"
+            android:layout_width="183dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintEnd_toEndOf="@+id/lblZone"
+            app:layout_constraintStart_toStartOf="@+id/lblZone" />
+
+        <TextView
+            android:id="@+id/lblZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/spZone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline14"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <TextView
+            android:id="@+id/lblVolumeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toEndOf="@+id/sbVolume"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="@+id/sbVolume"
+            app:layout_constraintTop_toBottomOf="@+id/sbVolume" />
+
+        <TextView
+            android:id="@+id/lblBass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+        <TextView
+            android:id="@+id/lblTreble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+        <TextView
+            android:id="@+id/lblBassStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
+            app:layout_constraintEnd_toEndOf="@+id/sbBass"
+            app:layout_constraintStart_toStartOf="@+id/sbBass" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
+            app:layout_constraintEnd_toEndOf="@+id/sbTreble"
+            app:layout_constraintStart_toStartOf="@+id/sbTreble" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="118dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="246dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="365dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="601dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="62dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="299dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="70dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
