@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.mobilepanel.R;
 import com.example.mobilepanel.customComponents.LoadingDialogFragment;
+import com.example.mobilepanel.services.LightService;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +28,8 @@ public class LightFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private LightService lightService = new LightService();
+    private Button btnMain;
 
     public LightFragment() {
         // Required empty public constructor
@@ -63,7 +67,23 @@ public class LightFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_light, container, false);
+        btnMain = (Button) v.findViewById(R.id.btnMain);
+        btnMain.setOnClickListener(new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                try {
+                    lightService.changeMain();
+                    System.out.println("Se envío la solicitud correctamente");
+
+                } catch (Exception ex) {
+                    System.out.println("Error con la peticion " + ex);
+                }
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_light, container, false);
+        return v;
     }
+
 }
